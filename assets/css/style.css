@@ -1,0 +1,143 @@
+:root {
+  --primary: #A54328;
+  --primary-hover: #924123;
+  --white: #FFFFFF;
+
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Source Serif 4', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: var(--primary);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+
+  transition: outline 0.1s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: calc(100vw - (100vw - 100%));
+  min-height: 100vh;
+
+  font-size: 2rem;
+
+  background: url('./../imgs/bg-sm.png') no-repeat center top/cover fixed;
+}
+
+h1,
+h2 {
+  /* Função clamp(min, ideal, high). Ideal para layouts complexos. Nesse caso, só exemplo. */
+  font-size: clamp(2.8rem, 2vw + 1rem, 4rem);
+  line-height: clamp(3.6rem, 3vw + 1rem, 5rem);
+}
+
+h3,
+p,
+li {
+  font-size: clamp(1.6rem, 1vw + 0.4rem, 2rem);
+  line-height: clamp(2rem, 2vw + 0.4rem, 2.5rem);
+}
+
+ul,
+ol {
+  padding: 2rem;
+}
+
+li {
+  list-style-position: inside;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  width: fit-content;
+
+  padding: 1rem 2rem;
+
+  border-radius: 0.8rem;
+  border: none;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  background-color: var(--primary);
+  color: var(--white);
+
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+
+  transition: background-color 0.3s;
+}
+
+button:active {
+  transform: scale(0.955);
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  max-width: 32rem;
+
+  padding: 5.6rem 3.2rem;
+
+  margin: auto;
+
+  box-sizing: content-box;
+}
+
+.container,
+.recipe,
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+@media (min-width: 326px) {
+  body {
+    background: url('./../imgs/bg-md.png') no-repeat center top/cover fixed;
+  }
+}
+
+@media (min-width: 1124px) {
+  .container {
+    flex-direction: row;
+    gap: 16rem;
+
+    max-width: fit-content;
+  }
+
+  .recipe {
+    width: 43.5rem;
+  }
+
+  .ingredients {
+    width: 52.5rem;
+  }
+}

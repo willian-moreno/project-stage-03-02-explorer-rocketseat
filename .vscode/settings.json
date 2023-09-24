@@ -1,0 +1,10 @@
+{
+	"html.format.wrapAttributes": "force-expand-multiline",
+	"markdownlint.config": {
+		"no-inline-html": false,
+		"first-line-heading": false,
+		"single-trailing-newline": false
+	},
+	"cSpell.language": "en,pt-BR,pt",
+	"cSpell.words": ["crocância"]
+}
